@@ -7,7 +7,8 @@ import '../utils/app_styles.dart';
 
 class TicketView extends StatelessWidget {
   final Map<String, dynamic> ticket;
-  const TicketView({super.key, required this.ticket});
+  final bool? isColor;
+  const TicketView({super.key, required this.ticket, this.isColor});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,7 @@ class TicketView extends StatelessWidget {
             // Showing the blue part of the card
             Container(
               decoration: BoxDecoration(
-                  color: const Color(0xFF526799),
+                  color: isColor==null ? Color(0xFF526799) : Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(AppLayout.getHeight(21)),
                     topRight: Radius.circular(AppLayout.getHeight(21)),
@@ -36,7 +37,7 @@ class TicketView extends StatelessWidget {
                       Text(
                         ticket['from']['code'],
                         style:
-                            Styles.headLineStyle3.copyWith(color: Colors.white),
+                            isColor==null ? Styles.headLineStyle3.copyWith(color: Colors.white) : Styles.headLineStyle3,
                       ),
                       Expanded(child: Container()),
                       ThickContainer(),
