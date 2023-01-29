@@ -8,7 +8,7 @@ class AppColumnLayout extends StatelessWidget {
   final CrossAxisAlignment alignment;
   final String firstText;
   final String secondText;
-  const AppColumnLayout({super.key, required this.firstText, required this.secondText, required this.alignment});
+  const AppColumnLayout({super.key, required this.firstText, required this.secondText, required this.alignment,});
 
   @override
   Widget build(BuildContext context) {
